@@ -1,7 +1,11 @@
 package com.sahanbcs.model.send;
 
-enum Encoding {
-    TEXT,
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+public enum Encoding {
+    TEXT ,
     FLASHSMS,
     BINARYSMS
 }

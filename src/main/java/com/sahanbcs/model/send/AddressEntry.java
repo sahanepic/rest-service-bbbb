@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class AddressEntry {
 
     private String address;
-    private Timestamp timeStamp;
+    private String timeStamp;
     private String messageId;
     private String statusCode;
     private String statusDetail;
@@ -15,7 +15,7 @@ public class AddressEntry {
     public AddressEntry( ) {
     }
 
-    public AddressEntry(String address, Timestamp timeStamp, String messageId, String statusCode, String statusDetail, String operator) {
+    public AddressEntry(String address, String timeStamp, String messageId, String statusCode, String statusDetail, String operator) {
         this.address = address;
         this.timeStamp = timeStamp;
         this.messageId = messageId;
@@ -32,11 +32,11 @@ public class AddressEntry {
         this.address = address;
     }
 
-    public Timestamp getTimeStamp() {
+    public String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(Timestamp timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 

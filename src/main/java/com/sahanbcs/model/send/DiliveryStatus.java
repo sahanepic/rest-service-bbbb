@@ -1,6 +1,10 @@
 package com.sahanbcs.model.send;
 
-enum DiliveryStatus {
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+public enum DiliveryStatus {
     DELIVERYREPORTNOTREQUIRED,
     DELIVERYREPORTREQUIRED
 }

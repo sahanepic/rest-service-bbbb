@@ -1,15 +1,17 @@
 package com.sahanbcs.model.send;
 
+import java.util.List;
+
 public class RequestSendSMS {
 
     private String applicationId;
     private String password;
     private String version;
-    private String destinationAddresses;
+    private List<String>  destinationAddresses;
     private String message;
     private String sourceAddress;
-    private DiliveryStatus diliveryStatus;
-    private Encoding encoding;
+    private String diliveryStatus;
+    private String encoding;
     private double chargingAmount;
 
 
@@ -17,7 +19,7 @@ public class RequestSendSMS {
 
     }
 
-    public RequestSendSMS(String applicationId, String password, String version, String destinationAddresses, String message, String sourceAddress, DiliveryStatus diliveryStatus, Encoding encoding, double chargingAmount) {
+    public RequestSendSMS(String applicationId, String password, String version, List<String> destinationAddresses, String message, String sourceAddress, String diliveryStatus, String encoding, double chargingAmount) {
         this.applicationId = applicationId;
         this.password = password;
         this.version = version;
@@ -27,6 +29,15 @@ public class RequestSendSMS {
         this.diliveryStatus = diliveryStatus;
         this.encoding = encoding;
         this.chargingAmount = chargingAmount;
+    }
+
+
+    public List<String> getDestinationAddresses() {
+        return destinationAddresses;
+    }
+
+    public void setDestinationAddresses(List<String> destinationAddresses) {
+        this.destinationAddresses = destinationAddresses;
     }
 
     public String getApplicationId() {
@@ -53,13 +64,6 @@ public class RequestSendSMS {
         this.version = version;
     }
 
-    public String getDestinationAddresses() {
-        return destinationAddresses;
-    }
-
-    public void setDestinationAddresses(String destinationAddresses) {
-        this.destinationAddresses = destinationAddresses;
-    }
 
     public String getMessage() {
         return message;
@@ -77,19 +81,19 @@ public class RequestSendSMS {
         this.sourceAddress = sourceAddress;
     }
 
-    public DiliveryStatus getDiliveryStatus() {
+    public String getDiliveryStatus() {
         return diliveryStatus;
     }
 
-    public void setDiliveryStatus(DiliveryStatus diliveryStatus) {
+    public void setDiliveryStatus(String diliveryStatus) {
         this.diliveryStatus = diliveryStatus;
     }
 
-    public Encoding getEncoding() {
+    public String getEncoding() {
         return encoding;
     }
 
-    public void setEncoding(Encoding encoding) {
+    public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
 
