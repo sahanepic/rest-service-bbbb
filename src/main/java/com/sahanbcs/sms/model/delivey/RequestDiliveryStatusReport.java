@@ -1,11 +1,16 @@
-package com.sahanbcs.model.delivey;
+package com.sahanbcs.sms.model.delivey;
 
-import com.sahanbcs.model.Enomorators.RDiliveryStatus;
+import com.sahanbcs.sms.model.Enomorators.RDiliveryStatus;
+
+import javax.validation.constraints.NotBlank;
 
 public class RequestDiliveryStatusReport {
 
+    @NotBlank
     private String destinationAddress;
+    @NotBlank
     private String timeStamp;
+    @NotBlank
     private String requestId;
     private RDiliveryStatus deliveryStatus;
 

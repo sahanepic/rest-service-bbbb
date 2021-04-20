@@ -1,19 +1,17 @@
-package com.sahanbcs.model.recive;
+package com.sahanbcs.sms.model.delivey;
 
-public class ResponceReciveSMS {
-
+public class ResponceDiliveryStatusReport {
     private String statusCode;
     private String statusDetail;
 
-
-    public ResponceReciveSMS( ) {
-    }
-
-    public ResponceReciveSMS(String statusCode, String statusDetail) {
+    public ResponceDiliveryStatusReport(String statusCode, String statusDetail) {
         this.statusCode = statusCode;
         this.statusDetail = statusDetail;
     }
 
+    public ResponceDiliveryStatusReport() {
+
+    }
 
     public String getStatusCode() {
         return statusCode;

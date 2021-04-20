@@ -1,6 +1,4 @@
-package com.sahanbcs.model.send;
-
-import java.sql.Timestamp;
+package com.sahanbcs.sms.model.send;
 
 public class AddressEntry {
 

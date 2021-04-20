@@ -1,18 +1,27 @@
-package com.sahanbcs.model.send;
+package com.sahanbcs.sms.model.send;
 
-//import com.sahanbcs.model.Enomorators.Encoding;
+//import com.sahanbcs.sms.model.Enomorators.Encoding;
 
-import com.sahanbcs.model.Enomorators.DiliveryStatus;
-import com.sahanbcs.model.Enomorators.Encoding;
+import com.sahanbcs.sms.model.Enomorators.DiliveryStatus;
+import com.sahanbcs.sms.model.Enomorators.Encoding;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 public class RequestSendSMS {
 
+    @NotBlank
     private String applicationId;
+    @NotBlank
     private String password;
+
     private String version;
+
+//    @Min.List(@Min(1))
     private List<String>  destinationAddresses;
+
+    @NotBlank
     private String message;
     private String sourceAddress;
 

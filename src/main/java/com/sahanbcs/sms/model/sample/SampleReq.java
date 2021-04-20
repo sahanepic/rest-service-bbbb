@@ -1,8 +1,14 @@
-package com.sahanbcs.model.sample;
+package com.sahanbcs.sms.model.sample;
+
+import com.sun.istack.internal.NotNull;
+
+import javax.validation.constraints.NotBlank;
 
 public class SampleReq {
 
+    @NotBlank
     private String name;
+    @NotBlank
     private String age;
 
     public SampleReq(String name, String age) {

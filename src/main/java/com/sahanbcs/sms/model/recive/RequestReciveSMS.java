@@ -1,14 +1,23 @@
-package com.sahanbcs.model.recive;
+package com.sahanbcs.sms.model.recive;
 
-import com.sahanbcs.model.Enomorators.Encoding;
+import com.sahanbcs.sms.model.Enomorators.Encoding;
+
+import javax.validation.constraints.NotBlank;
 
 public class RequestReciveSMS {
 
+    @NotBlank
     private String version;
+    @NotBlank
     private String applicationId;
     private String sourceAddress;
+
+    @NotBlank
     private String message;
+    @NotBlank
     private String requestId;
+
+
     private Encoding encoding;
 
     public RequestReciveSMS() {

@@ -1,4 +1,4 @@
-package com.sahanbcs.model.Enomorators;
+package com.sahanbcs.sms.model.Enomorators;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;

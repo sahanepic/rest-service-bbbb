@@ -1,18 +1,19 @@
-package com.sahanbcs.model.Enomorators;
+package com.sahanbcs.ussd.models.Enomerators;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.sahanbcs.sms.model.Enomorators.Encoding;
 
-public enum DiliveryStatus {
-    DELIVERYREPORTNOTREQUIRED("0"), DELIVERYREPORTREQUIRED("1");
+public enum REncording {
+
+    PlainASCII("440") ;
 
     private String text;
 
-    DiliveryStatus(String text) {
-        this.text=text;
+    REncording(String text) {
+        this.text =text;
     }
 
     public String getText(){return this.text;}
-
 
     @Override
     public String toString() {
@@ -20,8 +21,8 @@ public enum DiliveryStatus {
     }
 
     @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-    public static DiliveryStatus fromText(String text){
-        for(DiliveryStatus r : DiliveryStatus.values()){
+    public static REncording fromText(String text){
+        for(REncording r : REncording.values()){
             if(r.getText().equals(text)){
                 return r;
             }

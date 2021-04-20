@@ -1,4 +1,4 @@
-package com.sahanbcs.model.send;
+package com.sahanbcs.sms.model.send;
 
 import java.util.List;
 
