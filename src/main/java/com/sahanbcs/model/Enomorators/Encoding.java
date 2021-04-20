@@ -1,11 +1,31 @@
 package com.sahanbcs.model.Enomorators;
 
 
-//import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonCreator;
 
-//@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum Encoding {
-    TEXT ,
-    FLASHSMS,
-    BINARYSMS
+    Text("0") , Flashsms("240"), Binarysms("245");
+    private String text;
+
+    Encoding(String text) {
+        this.text=text;
+    }
+
+    public String getText(){return this.text;}
+
+
+    @Override
+    public String toString() {
+        return text;
+    }
+
+    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+    public static Encoding fromText(String text){
+        for(Encoding r : Encoding.values()){
+            if(r.getText().equals(text)){
+                return r;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
 }

@@ -3,6 +3,10 @@ package com.sahanbcs.controller;
 
 
 import com.sahanbcs.Util.Printer;
+import com.sahanbcs.model.delivey.RequestDiliveryStatusReport;
+import com.sahanbcs.model.delivey.ResponceDiliveryStatusReport;
+import com.sahanbcs.model.recive.RequestReciveSMS;
+import com.sahanbcs.model.recive.ResponceReciveSMS;
 import com.sahanbcs.model.sample.SampleReq;
 import com.sahanbcs.model.sample.SampleRes;
 import com.sahanbcs.model.send.AddressEntry;
@@ -36,9 +40,24 @@ public class SmsControle {
     @PostMapping("/smssend")
     public ResponceSendSMS smsSend(@RequestBody RequestSendSMS req){
        Printer.println("Message " + req.getMessage() );
+       Printer.println("Request : " + req.toString());
         List<AddressEntry> liadd = new ArrayList<AddressEntry>();
         liadd.add(new AddressEntry("tel:94775454545","20120515093023","dfsfs1213","S1000","Request was successfully processed","dialog"));
         return  new ResponceSendSMS("1.0","101803141358421632","S1000","Request was successfully processed",liadd);
+    }
+
+    @PostMapping("/smsrecive")
+    public ResponceReciveSMS  smsRecive(@RequestBody RequestReciveSMS  req){
+        Printer.println("Message " + req.getMessage() );
+        Printer.println("Request : " + req.toString());
+        return  new ResponceReciveSMS("E1308","Error during the charging operation") ;
+    }
+
+    @PostMapping("/smsdiliverystatusreport")
+    public ResponceDiliveryStatusReport smsDiliveryStatusReport(@RequestBody RequestDiliveryStatusReport   req){
+//        Printer.println("Message " + req.getMessage() );
+        Printer.println("Request : " + req.toString());
+        return  new ResponceDiliveryStatusReport("E1308","Error during the charging operation") ;
     }
 
 }

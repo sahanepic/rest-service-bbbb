@@ -1,5 +1,7 @@
 package com.sahanbcs.model.recive;
 
+import com.sahanbcs.model.Enomorators.Encoding;
+
 public class RequestReciveSMS {
 
     private String version;
@@ -7,12 +9,12 @@ public class RequestReciveSMS {
     private String sourceAddress;
     private String message;
     private String requestId;
-    private String encoding;
+    private Encoding encoding;
 
     public RequestReciveSMS() {
     }
 
-    public RequestReciveSMS(String version, String applicationId, String sourceAddress, String message, String requestId, String encoding) {
+    public RequestReciveSMS(String version, String applicationId, String sourceAddress, String message, String requestId, Encoding encoding) {
         this.version = version;
         this.applicationId = applicationId;
         this.sourceAddress = sourceAddress;
@@ -61,11 +63,23 @@ public class RequestReciveSMS {
         this.requestId = requestId;
     }
 
-    public String getEncoding() {
+    public Encoding getEncoding() {
         return encoding;
     }
 
-    public void setEncoding(String encoding) {
+    public void setEncoding(Encoding encoding) {
         this.encoding = encoding;
+    }
+
+    @Override
+    public String toString() {
+        return "RequestReciveSMS{" +
+                "version='" + version + '\'' +
+                ", applicationId='" + applicationId + '\'' +
+                ", sourceAddress='" + sourceAddress + '\'' +
+                ", message='" + message + '\'' +
+                ", requestId='" + requestId + '\'' +
+                ", encoding=" + encoding +
+                '}';
     }
 }

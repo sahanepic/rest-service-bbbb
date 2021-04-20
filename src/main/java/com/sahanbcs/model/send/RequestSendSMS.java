@@ -2,6 +2,9 @@ package com.sahanbcs.model.send;
 
 //import com.sahanbcs.model.Enomorators.Encoding;
 
+import com.sahanbcs.model.Enomorators.DiliveryStatus;
+import com.sahanbcs.model.Enomorators.Encoding;
+
 import java.util.List;
 
 public class RequestSendSMS {
@@ -12,8 +15,9 @@ public class RequestSendSMS {
     private List<String>  destinationAddresses;
     private String message;
     private String sourceAddress;
-    private  String diliveryStatus;
-    private String encoding;
+
+    private DiliveryStatus deliveryStatusRequest;
+    private Encoding encoding;
     private double chargingAmount;
 
 
@@ -22,14 +26,14 @@ public class RequestSendSMS {
 
     }
 
-    public RequestSendSMS(String applicationId, String password, String version, List<String> destinationAddresses, String message, String sourceAddress, String diliveryStatus, String encoding, double chargingAmount) {
+    public RequestSendSMS(String applicationId, String password, String version, List<String> destinationAddresses, String message, String sourceAddress, DiliveryStatus deliveryStatusRequest, Encoding encoding, double chargingAmount) {
         this.applicationId = applicationId;
         this.password = password;
         this.version = version;
         this.destinationAddresses = destinationAddresses;
         this.message = message;
         this.sourceAddress = sourceAddress;
-        this.diliveryStatus = diliveryStatus;
+        this.deliveryStatusRequest = deliveryStatusRequest;
         this.encoding = encoding;
         this.chargingAmount = chargingAmount;
     }
@@ -84,19 +88,35 @@ public class RequestSendSMS {
         this.sourceAddress = sourceAddress;
     }
 
-    public String getDiliveryStatus() {
-        return diliveryStatus;
+//    public String getDiliveryStatus() {
+//        return diliveryStatus;
+//    }
+//
+//    public void setDiliveryStatus(String diliveryStatus) {
+//        this.diliveryStatus = diliveryStatus;
+//    }
+//
+//    public String getEncoding() {
+//        return encoding;
+//    }
+//
+//    public void setEncoding(String encoding) {
+//        this.encoding = encoding;
+//    }
+
+    public DiliveryStatus getDeliveryStatusRequest() {
+        return deliveryStatusRequest;
     }
 
-    public void setDiliveryStatus(String diliveryStatus) {
-        this.diliveryStatus = diliveryStatus;
+    public void setDeliveryStatusRequest(DiliveryStatus deliveryStatusRequest) {
+        this.deliveryStatusRequest = deliveryStatusRequest;
     }
 
-    public String getEncoding() {
+    public Encoding getEncoding() {
         return encoding;
     }
 
-    public void setEncoding(String encoding) {
+    public void setEncoding(Encoding encoding) {
         this.encoding = encoding;
     }
 
@@ -106,5 +126,20 @@ public class RequestSendSMS {
 
     public void setChargingAmount(double chargingAmount) {
         this.chargingAmount = chargingAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "RequestSendSMS{" +
+                "applicationId='" + applicationId + '\'' +
+                ", password='" + password + '\'' +
+                ", version='" + version + '\'' +
+                ", destinationAddresses=" + destinationAddresses +
+                ", message='" + message + '\'' +
+                ", sourceAddress='" + sourceAddress + '\'' +
+                ", diliveryStatus=" + deliveryStatusRequest +
+                ", encoding=" + encoding +
+                ", chargingAmount=" + chargingAmount +
+                '}';
     }
 }
