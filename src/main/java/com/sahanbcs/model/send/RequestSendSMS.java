@@ -1,5 +1,7 @@
 package com.sahanbcs.model.send;
 
+//import com.sahanbcs.model.Enomorators.Encoding;
+
 import java.util.List;
 
 public class RequestSendSMS {
@@ -10,9 +12,10 @@ public class RequestSendSMS {
     private List<String>  destinationAddresses;
     private String message;
     private String sourceAddress;
-    private String diliveryStatus;
+    private  String diliveryStatus;
     private String encoding;
     private double chargingAmount;
+
 
 
     public RequestSendSMS( ) {
